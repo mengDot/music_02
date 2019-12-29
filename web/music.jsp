@@ -1,0 +1,440 @@
+<%@ page import="com.mrddy.music.utils.MusicUtil" %>
+<%@ page import="com.mrddy.music.dao.MusicDaoImpl" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    String musicid = request.getParameter("musicid");
+    String url = MusicUtil.getMusic(Integer.parseInt(musicid));
+
+    MusicDaoImpl dao = new MusicDaoImpl();
+    List data = dao.query(musicid);
+    Map music = (Map) data.get(0);
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>music</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/music/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/music/data.js"></script>
+    <script type="text/javascript">
+        $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+        $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+        $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+</head>
+<body>
+<div id="base" class="">
+
+    <!-- Unnamed (图片) -->
+    <div id="u513" class="ax_default image">
+        <img id="u513_img" class="img " src="images/music/u513.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u514" class="ax_default _sanjibiaoti">
+        <div id="u514_div" class=""></div>
+        <div id="u514_text" class="text ">
+            <p><span><%=music.get("musicname")%>></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u515" class="ax_default label">
+        <div id="u515_div" class=""></div>
+        <div id="u515_text" class="text ">
+            <p><span>歌手：&nbsp;  </span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u516" class="ax_default label">
+        <div id="u516_div" class=""></div>
+        <div id="u516_text" class="text ">
+            <p><span>所属专辑：&nbsp; <%=music.get("album")%></span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u517" class="ax_default label">
+        <div id="u517_div" class=""></div>
+        <div id="u517_text" class="text ">
+            <p><span>评论</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u518" class="ax_default label">
+        <div id="u518_div" class=""></div>
+        <div id="u518_text" class="text ">
+            <p><span>共5条评论</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u519" class="ax_default image">
+        <audio autoplay controls src="<%=url%>" >
+        </audio>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u520" class="ax_default label">
+        <div id="u520_div" class=""></div>
+        <div id="u520_text" class="text ">
+            <p><span>语种：&nbsp; 国语</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u521" class="ax_default label">
+        <div id="u521_div" class=""></div>
+        <div id="u521_text" class="text ">
+            <p><span>发行时间：&nbsp;2019-06-13</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u522" class="ax_default image">
+        <img id="u522_img" class="img " src="images/music/u522.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u523" class="ax_default label">
+        <div id="u523_div" class=""></div>
+        <div id="u523_text" class="text ">
+            <p><span>最新评论</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u524" class="ax_default line">
+        <img id="u524_img" class="img " src="images/music/u524.png"/>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u525" class="ax_default image">
+        <img id="u525_img" class="img " src="images/music/u525.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u526" class="ax_default box_1">
+        <div id="u526_div" class=""></div>
+        <div id="u526_text" class="text ">
+            <p><span>黄大大</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u527" class="ax_default box_1">
+        <div id="u527_div" class=""></div>
+        <div id="u527_text" class="text ">
+            <p><span>好听,感觉会火</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u528" class="ax_default box_1">
+        <div id="u528_div" class=""></div>
+        <div id="u528_text" class="text ">
+            <p><span>12:13</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u529" class="ax_default line">
+        <img id="u529_img" class="img " src="images/music/u524.png"/>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u530" class="ax_default image">
+        <img id="u530_img" class="img " src="images/music/u530.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u531" class="ax_default box_1">
+        <div id="u531_div" class=""></div>
+        <div id="u531_text" class="text ">
+            <p><span>黄大大</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u532" class="ax_default box_1">
+        <div id="u532_div" class=""></div>
+        <div id="u532_text" class="text ">
+            <p><span>好听,感觉会火1</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u533" class="ax_default box_1">
+        <div id="u533_div" class=""></div>
+        <div id="u533_text" class="text ">
+            <p><span>12:13</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u534" class="ax_default line">
+        <img id="u534_img" class="img " src="images/music/u524.png"/>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u535" class="ax_default image">
+        <img id="u535_img" class="img " src="images/music/u525.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u536" class="ax_default box_1">
+        <div id="u536_div" class=""></div>
+        <div id="u536_text" class="text ">
+            <p><span>黄大大</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u537" class="ax_default box_1">
+        <div id="u537_div" class=""></div>
+        <div id="u537_text" class="text ">
+            <p><span>好听,感觉会火2</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u538" class="ax_default box_1">
+        <div id="u538_div" class=""></div>
+        <div id="u538_text" class="text ">
+            <p><span>12:13</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u539" class="ax_default line">
+        <img id="u539_img" class="img " src="images/music/u524.png"/>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u540" class="ax_default image">
+        <img id="u540_img" class="img " src="images/music/u540.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u541" class="ax_default box_1">
+        <div id="u541_div" class=""></div>
+        <div id="u541_text" class="text ">
+            <p><span>黄大大</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u542" class="ax_default box_1">
+        <div id="u542_div" class=""></div>
+        <div id="u542_text" class="text ">
+            <p><span>好听,感觉会火3</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u543" class="ax_default box_1">
+        <div id="u543_div" class=""></div>
+        <div id="u543_text" class="text ">
+            <p><span>12:13</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u544" class="ax_default line">
+        <img id="u544_img" class="img " src="images/music/u524.png"/>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u545" class="ax_default image">
+        <img id="u545_img" class="img " src="images/music/u525.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u546" class="ax_default box_1">
+        <div id="u546_div" class=""></div>
+        <div id="u546_text" class="text ">
+            <p><span>黄大大</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u547" class="ax_default box_1">
+        <div id="u547_div" class=""></div>
+        <div id="u547_text" class="text ">
+            <p><span>好听,感觉会火4</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u548" class="ax_default box_1">
+        <div id="u548_div" class=""></div>
+        <div id="u548_text" class="text ">
+            <p><span>12:13</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (水平线) -->
+    <div id="u549" class="ax_default line">
+        <img id="u549_img" class="img " src="images/music/u524.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u550" class="ax_default box_1">
+        <div id="u550_div" class=""></div>
+        <div id="u550_text" class="text ">
+            <p><span>—— 以上为全部评论 ——</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u551" class="ax_default box_1">
+        <div id="u551_div" class=""></div>
+        <div id="u551_text" class="text ">
+            <p style="font-size:14px;"><span><br></span></p><p style="font-size:20px;"><span>歌词</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>追光者- 旭明大帅比(Grady)</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>词：冒险军团</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>曲：冒险军团</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>编曲：宋清淼</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>录音：小珉</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>监制：小刚</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>那么多年过去了</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>我还在不停寻找</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>我要找的东西还未找到</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>贴在墙上的旧海报</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>已失去了它的面容</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>如今只有它陪我而已</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>这一次旅行让我惊慌</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>这一段路 让我不知所谓</span></p><p style="font-size:14px;"><span><br></span></p><p style="font-size:14px;"><span>火车你开往何方</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u552" class="ax_default box_1">
+        <div id="u552_div" class=""></div>
+        <div id="u552_text" class="text ">
+            <p><span>物联一队Wlw云音乐项目组</span></p><p><span><br></span></p><p><span>黄旭民&nbsp; 王亚飞&nbsp; 曾紫玲&nbsp; 黄伟强&nbsp; 李谟函</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u553" class="ax_default box_1">
+        <div id="u553_div" class=""></div>
+        <div id="u553_text" class="text ">
+            <p><span>[查看全部歌词]</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u554" class="ax_default box_1">
+        <div id="u554_div" class=""></div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u555" class="ax_default image">
+        <img id="u555_img" class="img " src="images/主页/u1.png"/>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u556" class="ax_default box_1">
+        <div id="u556_div" class=""></div>
+        <div id="u556_text" class="text ">
+            <p><span>发现音乐</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u557" class="ax_default box_1">
+        <div id="u557_div" class=""></div>
+        <div id="u557_text" class="text ">
+            <p><span>我的音乐</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u558" class="ax_default box_1">
+        <div id="u558_div" class=""></div>
+        <div id="u558_text" class="text ">
+            <p><span>音乐人</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u559" class="ax_default box_1">
+        <div id="u559_div" class=""></div>
+        <div id="u559_text" class="text ">
+            <p><span>朋友</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u560" class="ax_default box_1">
+        <div id="u560_div" class=""></div>
+        <div id="u560_text" class="text ">
+            <p><span>商城</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u561" class="ax_default box_1">
+        <div id="u561_div" class=""></div>
+        <div id="u561_text" class="text ">
+            <p><span>登录 </span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u562" class="ax_default box_1">
+        <div id="u562_div" class=""></div>
+        <div id="u562_text" class="text ">
+            <p><span>推荐</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u563" class="ax_default box_1">
+        <div id="u563_div" class=""></div>
+        <div id="u563_text" class="text ">
+            <p><span>排行榜</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u564" class="ax_default box_1">
+        <div id="u564_div" class=""></div>
+        <div id="u564_text" class="text ">
+            <p><span>歌手</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u565" class="ax_default box_1">
+        <div id="u565_div" class=""></div>
+        <div id="u565_text" class="text ">
+            <p><span>歌单</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (文本框) -->
+    <div id="u566" class="ax_default text_field">
+        <input id="u566_input" type="text" value=""/>
+    </div>
+
+    <!-- back (动态面板) -->
+    <div id="u567" class="ax_default" data-label="back">
+        <div id="u567_state0" class="panel_state" data-label="State1" style="">
+            <div id="u567_state0_content" class="panel_state_content">
+
+                <!-- Unnamed (图片) -->
+                <div id="u568" class="ax_default image">
+                    <img id="u568_img" class="img " src="images/用户歌单详情/u133.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

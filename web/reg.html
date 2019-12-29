@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>用户注册</title>
+<meta name="keywords" content="网站关键词" />
+<meta name="description" content="说明" />
+<link rel="Shortcut Icon" href="img/ico.jpg" />
+<link rel="stylesheet" type="text/css" href="css/user.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/vector.js"></script>
+</head>
+<body>
+
+<div id="container">
+	<div id="output">
+		<div class="containerT">
+			<h1>用户注册</h1>
+			<form class="form" id="entry_form">
+				<input type="text" placeholder="用户名" id="id">
+				<input type="password" placeholder="密码" id="pass">
+				<input type="password2" placeholder="确认密码" id="pass">
+				<button type="button" id="entry_btn">注册</button>
+				<div id="prompt" class="prompt"></div>
+			</form>
+			<h1>已有注册账号？<a href="login.html">点我登录</a></h1>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        Victor("container", "output");   //登录背景函数
+        $("#entry_name").focus();
+        $(document).keydown(function(event){
+            if(event.keyCode==13){
+                $("#entry_btn").click();
+            }
+        });
+    });
+</script>
+</body>
+</html>
