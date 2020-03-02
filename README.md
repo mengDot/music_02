@@ -3,4 +3,4 @@
 
 这模块为WEB模块，爬虫模块请参考music_01
 
-#博客说明地址：https://www.mrddy.com/46.html
+#博客说明地址：https://www.m7m3.com
